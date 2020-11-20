@@ -13,6 +13,19 @@ export class ContactsWeb extends WebPlugin implements ContactsPlugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async getContacts(filter: string): Promise<{ results: any[] }> {
+    console.log('filter: ', filter);
+    return {
+      results: [
+        {
+          firstName: 'Tien',
+          lastName: 'Le',
+          telephone: '0903566472',
+        },
+      ],
+    };
+  }
 }
 
 const Contacts = new ContactsWeb();
